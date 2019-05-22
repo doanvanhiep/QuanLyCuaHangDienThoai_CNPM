@@ -49,6 +49,15 @@ namespace QuanLiCuaHangDienThoai
 
         }
 
-      
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Xin chào Hiệp";
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau f = new frmDoiMatKhau();
+            f.ShowDialog();
+        }
     }
 }

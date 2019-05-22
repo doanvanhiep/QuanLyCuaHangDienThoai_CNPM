@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnIn = new System.Windows.Forms.Button();
-            this.btnNhapHang = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lsvXuat = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnThemVaoHoaDon = new System.Windows.Forms.Button();
@@ -54,12 +54,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtGiamGia = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,16 +74,6 @@
             this.btnIn.TabIndex = 11;
             this.btnIn.Text = "In";
             this.btnIn.UseVisualStyleBackColor = true;
-            // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapHang.Location = new System.Drawing.Point(250, 50);
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(144, 34);
-            this.btnNhapHang.TabIndex = 10;
-            this.btnNhapHang.Text = "Xuất hàng";
-            this.btnNhapHang.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -184,13 +173,23 @@
             this.panel1.Controls.Add(this.lsvXuat);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnNhapHang);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnIn);
             this.panel1.Location = new System.Drawing.Point(18, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 409);
             this.panel1.TabIndex = 14;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(283, 355);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(111, 40);
+            this.btnThoat.TabIndex = 11;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panel2
             // 
@@ -226,7 +225,7 @@
             // btnThemVaoHoaDon
             // 
             this.btnThemVaoHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemVaoHoaDon.Location = new System.Drawing.Point(104, 274);
+            this.btnThemVaoHoaDon.Location = new System.Drawing.Point(144, 261);
             this.btnThemVaoHoaDon.Name = "btnThemVaoHoaDon";
             this.btnThemVaoHoaDon.Size = new System.Drawing.Size(139, 60);
             this.btnThemVaoHoaDon.TabIndex = 25;
@@ -328,21 +327,11 @@
             this.panel4.Size = new System.Drawing.Size(346, 197);
             this.panel4.TabIndex = 17;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(77, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 33);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "THÀNH TIỀN";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(85, 109);
+            this.label8.Location = new System.Drawing.Point(31, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 24);
             this.label8.TabIndex = 14;
@@ -352,7 +341,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(92, 67);
+            this.label14.Location = new System.Drawing.Point(31, 67);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 24);
             this.label14.TabIndex = 15;
@@ -361,29 +350,28 @@
             // txtTongTien
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(190, 106);
+            this.txtTongTien.Location = new System.Drawing.Point(136, 106);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(102, 29);
+            this.txtTongTien.Size = new System.Drawing.Size(95, 29);
             this.txtTongTien.TabIndex = 16;
             // 
             // txtGiamGia
             // 
             this.txtGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiamGia.Location = new System.Drawing.Point(190, 62);
+            this.txtGiamGia.Location = new System.Drawing.Point(136, 62);
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(102, 29);
             this.txtGiamGia.TabIndex = 17;
             // 
-            // btnThoat
+            // label7
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(283, 355);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(111, 40);
-            this.btnThoat.TabIndex = 11;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(77, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(199, 33);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "THÀNH TIỀN";
             // 
             // frmXuatHang
             // 
@@ -416,7 +404,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView lsvXuat;
         private System.Windows.Forms.Label label1;
