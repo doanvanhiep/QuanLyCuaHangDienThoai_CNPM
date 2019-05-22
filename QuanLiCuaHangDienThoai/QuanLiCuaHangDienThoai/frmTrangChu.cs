@@ -59,5 +59,12 @@ namespace QuanLiCuaHangDienThoai
             frmDoiMatKhau f = new frmDoiMatKhau();
             f.ShowDialog();
         }
+
+        private void quảnLíNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuanLiNhanVien f = new frmQuanLiNhanVien();
+            this.Hide();
+            f.ShowDialog();
+        }
     }
 }
