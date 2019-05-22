@@ -1,0 +1,9 @@
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojAssemblyReference.cache
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

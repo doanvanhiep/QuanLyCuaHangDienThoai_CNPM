@@ -1,0 +1,6 @@
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
