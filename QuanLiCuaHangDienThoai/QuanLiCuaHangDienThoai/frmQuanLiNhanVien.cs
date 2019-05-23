@@ -12,9 +12,24 @@ namespace QuanLiCuaHangDienThoai
 {
     public partial class frmQuanLiNhanVien : Form
     {
-        public frmQuanLiNhanVien()
+        Form f;
+        public frmQuanLiNhanVien(Form f)
         {
+            this.f = f;
             InitializeComponent();
+        }
+
+        
+
+        private void frmQuanLiNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            f.Show();
         }
     }
 }

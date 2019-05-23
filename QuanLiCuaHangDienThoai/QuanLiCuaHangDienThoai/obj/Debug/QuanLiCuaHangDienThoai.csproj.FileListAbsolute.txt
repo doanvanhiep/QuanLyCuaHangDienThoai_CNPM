@@ -21,3 +21,4 @@ E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\DataAcc
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CopyComplete
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmDoiMatKhau.resources
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmQuanLiNhanVien.resources
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmChiTietSP.resources

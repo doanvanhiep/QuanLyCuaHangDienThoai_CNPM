@@ -62,9 +62,14 @@ namespace QuanLiCuaHangDienThoai
 
         private void quảnLíNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmQuanLiNhanVien f = new frmQuanLiNhanVien();
+            frmQuanLiNhanVien f = new frmQuanLiNhanVien(this);
             this.Hide();
             f.ShowDialog();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

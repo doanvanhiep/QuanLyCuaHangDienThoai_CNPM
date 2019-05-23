@@ -23,5 +23,20 @@ namespace QuanLiCuaHangDienThoai
             this.Hide();
             frmTrangChu.ShowDialog();
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult tl = MessageBox.Show("Bạn có thực sự muốn thoát không??", "Thông báo", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if(tl==DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

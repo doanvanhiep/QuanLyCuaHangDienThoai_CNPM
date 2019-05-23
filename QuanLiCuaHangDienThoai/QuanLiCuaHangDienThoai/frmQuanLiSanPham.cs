@@ -21,7 +21,7 @@ namespace QuanLiCuaHangDienThoai
 
         private void frmQuanLiSanPham_Load(object sender, EventArgs e)
         {
-            CreatePicture(4);
+            CreatePicture(3);
             //pictureBox1.Image = Image.FromFile(@"C:\Users\ADMIN\Pictures\Saved Pictures\x.jpg");
             //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -54,8 +54,15 @@ namespace QuanLiCuaHangDienThoai
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            frmChiTietSP f = new frmChiTietSP();
+            f.ShowDialog();
             PictureBox p =(PictureBox) sender;
             MessageBox.Show(p.Name);
+        }
+
+        private void frmQuanLiSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            f.Show();
         }
     }
 }
