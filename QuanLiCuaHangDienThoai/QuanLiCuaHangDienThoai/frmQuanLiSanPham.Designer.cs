@@ -30,9 +30,9 @@
         {
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +55,15 @@
             this.panel1.Size = new System.Drawing.Size(435, 68);
             this.panel1.TabIndex = 1;
             // 
-            // panel23
+            // btnTim
             // 
-            this.panel23.Location = new System.Drawing.Point(12, 105);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(700, 410);
-            this.panel23.TabIndex = 2;
+            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(334, 24);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(76, 28);
+            this.btnTim.TabIndex = 2;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -72,21 +75,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập tên";
             // 
-            // btnTim
+            // panel23
             // 
-            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(334, 24);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(76, 28);
-            this.btnTim.TabIndex = 2;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.panel23.Location = new System.Drawing.Point(12, 105);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(700, 410);
+            this.panel23.TabIndex = 2;
             // 
             // frmQuanLiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 523);
+            this.ClientSize = new System.Drawing.Size(718, 523);
             this.Controls.Add(this.panel23);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

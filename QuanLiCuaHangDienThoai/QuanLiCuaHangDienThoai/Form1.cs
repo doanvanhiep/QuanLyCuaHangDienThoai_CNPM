@@ -7,21 +7,108 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 
 namespace QuanLiCuaHangDienThoai
 {
     public partial class frmDangNhap : Form
     {
+        DangNhapBLL bll;
+        DataSet ds;
+        string error = null;
+
+        //Thông tin của tài khoản
+
+        int idnv;
+        int quyen;
         public frmDangNhap()
         {
+            bll = new DangNhapBLL();
+            ds = new DataSet();
             InitializeComponent();
+            txtTenDangNhap.Text = Properties.Settings.Default.user;
+            txtMatKhau.Text = Properties.Settings.Default.pass;
+            ckbMatKhau.Checked = Properties.Settings.Default.check;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmTrangChu frmTrangChu = new frmTrangChu();
-            this.Hide();
-            frmTrangChu.ShowDialog();
+            try
+            {
+                string user = txtTenDangNhap.Text.ToString().Trim();
+                string password = txtMatKhau.Text.ToString().Trim();
+                if (string.IsNullOrEmpty(user))
+                {
+                    MessageBox.Show("Vui lòng nhập tên đăng nhập !!!", "Lỗi",
+                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    txtTenDangNhap.ResetText();
+                    txtTenDangNhap.Focus();
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(password))
+                    {
+                        MessageBox.Show("Vui lòng nhập mật khẩu !!!", "Lỗi",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        txtMatKhau.ResetText();
+                        txtMatKhau.Focus();
+                    }
+                    else
+                    {
+
+                        ds  = bll.DangNhap(ref error, txtTenDangNhap.Text, txtMatKhau.Text);
+                        // kiểm tra tài khoản có tồn tại không
+                        int kt = ds.Tables[0].Rows.Count;
+                        if (kt > 0)
+                        {
+                            //Nhập thông tin
+                            idnv = Convert.ToInt32(ds.Tables[0].Rows[0]["idNV"].ToString());
+                            quyen = Convert.ToInt32(ds.Tables[0].Rows[0]["quyen"].ToString());
+                            if (ckbMatKhau.Checked == true)
+                            {
+                                Properties.Settings.Default.user = user;
+                                Properties.Settings.Default.pass = password;
+                                Properties.Settings.Default.check = true;
+                                Properties.Settings.Default.Save();
+                            }
+                            else
+                            {
+                                Properties.Settings.Default.user = "";
+                                Properties.Settings.Default.pass = "";
+                                Properties.Settings.Default.check = false;
+                                Properties.Settings.Default.Save();
+                            }
+                            frmTrangChu f = new frmTrangChu(this);
+                            this.Hide();
+                            //Truyền dữ liệu qua form khác
+                            f.name = user;
+                            f.idnv = idnv;
+                            f.quyen = quyen;
+
+                            f.ShowDialog();
+                            txtTenDangNhap.ResetText();
+                            txtMatKhau.ResetText();
+                            ckbMatKhau.Checked = false;
+                            txtTenDangNhap.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu !!!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            txtTenDangNhap.ResetText();
+                            txtMatKhau.ResetText();
+                            txtTenDangNhap.Focus();
+
+                        }
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi rồi !!!", "Lỗi",
+                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

@@ -12,46 +12,20 @@ namespace QuanLiCuaHangDienThoai
 {
     public partial class frmTrangChu : Form
     {
-        public frmTrangChu()
+        public int idnv,quyen;
+
+        public string name = "";
+        Form f;
+        public frmTrangChu(Form f)
         {
+            this.f = f;
             InitializeComponent();
         }
 
-        private void quétMãToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show( "Tính năng sẽ được update sau!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information
-                , MessageBoxDefaultButton.Button1);
-        }
-
-        private void thủCôngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmNhapHang frmNhapHang = new frmNhapHang(this);
-            this.Hide();
-            frmNhapHang.ShowDialog();
-        }
-
-        private void xuấtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmXuatHang fxh = new frmXuatHang(this);
-            this.Hide();
-            fxh.ShowDialog();
-        }
-
-        private void quảnLíSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLiSanPham fqlsp = new frmQuanLiSanPham(this);
-            this.Hide();
-            fqlsp.ShowDialog();
-        }
-
-        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Xin chào Hiệp";
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Xin chào "+name;
         }
 
         private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -67,7 +41,40 @@ namespace QuanLiCuaHangDienThoai
             f.ShowDialog();
         }
 
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.user = "";
+            Properties.Settings.Default.pass = "";
+            Properties.Settings.Default.check = false;
+            Properties.Settings.Default.Save();
+            this.Close();
+            f.Show();
+        }
+
+        private void danhSáchSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuanLiSanPham fqlsp = new frmQuanLiSanPham(this);
+            this.Hide();
+            fqlsp.ShowDialog();
+        }
+
+        private void nhậpHàngToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmNhapHang frmNhapHang = new frmNhapHang(this);
+            frmNhapHang.idnv = idnv;
+            this.Hide();
+            frmNhapHang.ShowDialog();
+        }
+
+        private void xuấtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmXuatHang fxh = new frmXuatHang(this);
+            this.Hide();
+            fxh.ShowDialog();
+        }
+
+        private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

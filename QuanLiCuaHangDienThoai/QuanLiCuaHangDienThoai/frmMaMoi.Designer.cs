@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picBoxSP = new System.Windows.Forms.PictureBox();
+            this.btnChonHinh = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtGiaSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtTGBH = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTGBH = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.picBoxSP = new System.Windows.Forms.PictureBox();
-            this.btnChonHinh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSP)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +66,25 @@
             this.panel1.Size = new System.Drawing.Size(702, 319);
             this.panel1.TabIndex = 4;
             // 
+            // picBoxSP
+            // 
+            this.picBoxSP.Location = new System.Drawing.Point(488, 124);
+            this.picBoxSP.Name = "picBoxSP";
+            this.picBoxSP.Size = new System.Drawing.Size(186, 147);
+            this.picBoxSP.TabIndex = 12;
+            this.picBoxSP.TabStop = false;
+            // 
+            // btnChonHinh
+            // 
+            this.btnChonHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonHinh.Location = new System.Drawing.Point(329, 151);
+            this.btnChonHinh.Name = "btnChonHinh";
+            this.btnChonHinh.Size = new System.Drawing.Size(141, 37);
+            this.btnChonHinh.TabIndex = 4;
+            this.btnChonHinh.Text = "Chọn hình";
+            this.btnChonHinh.UseVisualStyleBackColor = true;
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
+            // 
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,6 +94,7 @@
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label4
             // 
@@ -114,6 +133,34 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Giá SP";
             // 
+            // txtTGBH
+            // 
+            this.txtTGBH.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTGBH.Location = new System.Drawing.Point(488, 77);
+            this.txtTGBH.Name = "txtTGBH";
+            this.txtTGBH.Size = new System.Drawing.Size(186, 31);
+            this.txtTGBH.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(324, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 25);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Hình SP";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(324, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 25);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Thời gian BH";
+            // 
             // txtTenSP
             // 
             this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,53 +188,6 @@
             this.label1.Size = new System.Drawing.Size(259, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tạo Sản Phẩm Mới";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(324, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Thời gian BH";
-            // 
-            // txtTGBH
-            // 
-            this.txtTGBH.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTGBH.Location = new System.Drawing.Point(488, 77);
-            this.txtTGBH.Name = "txtTGBH";
-            this.txtTGBH.Size = new System.Drawing.Size(186, 31);
-            this.txtTGBH.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(324, 112);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Hình SP";
-            // 
-            // picBoxSP
-            // 
-            this.picBoxSP.Location = new System.Drawing.Point(488, 124);
-            this.picBoxSP.Name = "picBoxSP";
-            this.picBoxSP.Size = new System.Drawing.Size(186, 147);
-            this.picBoxSP.TabIndex = 12;
-            this.picBoxSP.TabStop = false;
-            // 
-            // btnChonHinh
-            // 
-            this.btnChonHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonHinh.Location = new System.Drawing.Point(329, 151);
-            this.btnChonHinh.Name = "btnChonHinh";
-            this.btnChonHinh.Size = new System.Drawing.Size(141, 37);
-            this.btnChonHinh.TabIndex = 4;
-            this.btnChonHinh.Text = "Chọn hình";
-            this.btnChonHinh.UseVisualStyleBackColor = true;
-            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
             // frmMaMoi
             // 

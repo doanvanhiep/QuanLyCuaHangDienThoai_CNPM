@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 
 namespace QuanLiCuaHangDienThoai
 {
     public partial class frmMaMoi : Form
     {
+        string error;
+        SanPhamBLL bll;
+        string file = "";
         OpenFileDialog ofdOpenFile;
         public frmMaMoi()
         {
             ofdOpenFile = new OpenFileDialog();
             InitializeComponent();
+            bll = new SanPhamBLL();
         }
 
         private void btnChonHinh_Click(object sender, EventArgs e)
@@ -24,7 +29,7 @@ namespace QuanLiCuaHangDienThoai
             try
             {
                 ofdOpenFile.ShowDialog();
-                string file = ofdOpenFile.FileName;
+                 file = ofdOpenFile.FileName;
                 if (string.IsNullOrEmpty(file))
                     return;
                 picBoxSP.Image = Image.FromFile(@file);
@@ -39,6 +44,29 @@ namespace QuanLiCuaHangDienThoai
         {
             picBoxSP.Image = Image.FromFile(@"C:\Users\ADMIN\Pictures\Saved Pictures\x.jpg");
             picBoxSP.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string tenSP = txtTenSP.Text;
+            string mota = txtMoTa.Text;
+            double gia = Convert.ToDouble(txtGiaSP.Text);
+            string hinh = file;
+            int hanbaohanh = Convert.ToInt32(txtTGBH.Text);
+
+            bool kq= bll.ThemSanPham(tenSP, mota, gia, hinh, hanbaohanh, ref error);
+            if(kq)
+            {
+                MessageBox.Show("Đã thêm thành công!!!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                this.Close();
+            }
+            
+            else
+            {
+                MessageBox.Show("Thêm thất bại !!!", "Lỗi", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
     }
 }

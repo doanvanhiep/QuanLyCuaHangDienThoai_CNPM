@@ -36,7 +36,7 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbMatKhau = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -121,16 +121,16 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // checkBox1
+            // ckbMatKhau
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(83, 253);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(176, 29);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Nhớ mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbMatKhau.AutoSize = true;
+            this.ckbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbMatKhau.Location = new System.Drawing.Point(83, 253);
+            this.ckbMatKhau.Name = "ckbMatKhau";
+            this.ckbMatKhau.Size = new System.Drawing.Size(176, 29);
+            this.ckbMatKhau.TabIndex = 8;
+            this.ckbMatKhau.Text = "Nhớ mật khẩu";
+            this.ckbMatKhau.UseVisualStyleBackColor = true;
             // 
             // frmDangNhap
             // 
@@ -139,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(509, 393);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ckbMatKhau);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
@@ -170,7 +170,7 @@
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbMatKhau;
     }
 }
 
