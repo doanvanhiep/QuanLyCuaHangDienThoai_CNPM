@@ -50,9 +50,17 @@ namespace QuanLiCuaHangDienThoai
         {
             string tenSP = txtTenSP.Text;
             string mota = txtMoTa.Text;
-            double gia = Convert.ToDouble(txtGiaSP.Text);
+            double gia = 0;
+            if (txtGiaSP.Text.Trim()!="")
+            {
+                Convert.ToDouble(txtGiaSP.Text);
+            }
             string hinh = file;
-            int hanbaohanh = Convert.ToInt32(txtTGBH.Text);
+            int hanbaohanh =0;
+            if (txtTGBH.Text.Trim()!="")
+            {
+                hanbaohanh = Convert.ToInt32(txtTGBH.Text);
+            }
 
             bool kq= bll.ThemSanPham(tenSP, mota, gia, hinh, hanbaohanh, ref error);
             if(kq)
@@ -64,9 +72,16 @@ namespace QuanLiCuaHangDienThoai
             
             else
             {
+                this.Close();
+                
                 MessageBox.Show("Thêm thất bại !!!", "Lỗi", MessageBoxButtons.OK,
                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -60,23 +60,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoHanh.Designer.cs">
+      <DependentUpon>frmBaoHanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietSP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChiTietSP.Designer.cs">
       <DependentUpon>frmChiTietSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCongTy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCongTy.Designer.cs">
-      <DependentUpon>frmCongTy.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLSXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLSXuatHang.Designer.cs">
+      <DependentUpon>frmLSXuatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLSXuatHangChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLSXuatHangChiTiet.Designer.cs">
+      <DependentUpon>frmLSXuatHangChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaMoi.cs">
       <SubType>Form</SubType>
@@ -119,14 +131,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoHanh.resx">
+      <DependentUpon>frmBaoHanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietSP.resx">
       <DependentUpon>frmChiTietSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCongTy.resx">
-      <DependentUpon>frmCongTy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLSXuatHang.resx">
+      <DependentUpon>frmLSXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLSXuatHangChiTiet.resx">
+      <DependentUpon>frmLSXuatHangChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaMoi.resx">
       <DependentUpon>frmMaMoi.cs</DependentUpon>

@@ -59,6 +59,7 @@
             this.btnDangNhap.TabIndex = 15;
             this.btnDangNhap.Text = "Lưu";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // txtMKM
             // 

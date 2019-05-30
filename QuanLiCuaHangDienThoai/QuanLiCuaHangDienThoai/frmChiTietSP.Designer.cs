@@ -63,12 +63,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 280);
             this.panel1.TabIndex = 0;
+
             // 
             // txtTongso
             // 
             this.txtTongso.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongso.Location = new System.Drawing.Point(380, 132);
             this.txtTongso.Name = "txtTongso";
+            this.txtTongso.ReadOnly = true;
             this.txtTongso.Size = new System.Drawing.Size(121, 26);
             this.txtTongso.TabIndex = 8;
             // 

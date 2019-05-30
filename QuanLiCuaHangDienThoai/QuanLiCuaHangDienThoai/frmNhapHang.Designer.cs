@@ -257,6 +257,7 @@
             this.GiaNhap});
             this.dgvSP.Location = new System.Drawing.Point(7, 97);
             this.dgvSP.Name = "dgvSP";
+            this.dgvSP.ReadOnly = true;
             this.dgvSP.Size = new System.Drawing.Size(401, 155);
             this.dgvSP.TabIndex = 7;
             // 
@@ -264,24 +265,28 @@
             // 
             this.IDSP.HeaderText = "ID";
             this.IDSP.Name = "IDSP";
+            this.IDSP.ReadOnly = true;
             this.IDSP.Width = 20;
             // 
             // tenSP
             // 
             this.tenSP.HeaderText = "Tên Sản Phẩm";
             this.tenSP.Name = "tenSP";
+            this.tenSP.ReadOnly = true;
             this.tenSP.Width = 200;
             // 
             // SoLuong
             // 
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             this.SoLuong.Width = 60;
             // 
             // GiaNhap
             // 
             this.GiaNhap.HeaderText = "Giá Nhập";
             this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.ReadOnly = true;
             this.GiaNhap.Width = 77;
             // 
             // frmNhapHang

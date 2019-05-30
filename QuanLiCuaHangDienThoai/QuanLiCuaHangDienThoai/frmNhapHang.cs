@@ -74,11 +74,11 @@ namespace QuanLiCuaHangDienThoai
                 {
                     for (int i = 0; i < soluongdong; i++)
                     {
-                        khbll.ThemKhoHang(ref error, Convert.ToInt32(dgvSP.Rows[0].Cells[0].Value.ToString()), idnv,
+                        khbll.ThemKhoHang(ref error, Convert.ToInt32(dgvSP.Rows[i].Cells[0].Value.ToString()), idnv,
                             Convert.ToDouble(dgvSP.Rows[0].Cells[3].Value.ToString()),
                             DateTime.Now, Convert.ToInt32(dgvSP.Rows[0].Cells[2].Value.ToString()));
 
-                        spbll.SuaSLSP(ref error, Convert.ToInt32(dgvSP.Rows[0].Cells[0].Value.ToString()),
+                        spbll.SuaSLSP(ref error, Convert.ToInt32(dgvSP.Rows[i].Cells[0].Value.ToString()),
                             Convert.ToInt32(dgvSP.Rows[0].Cells[2].Value.ToString()));
                     }
                     MessageBox.Show("Bạn đã thêm thành công", "Thông báo", MessageBoxButtons.OK,

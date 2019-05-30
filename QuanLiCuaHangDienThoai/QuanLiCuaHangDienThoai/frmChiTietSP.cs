@@ -37,10 +37,19 @@ namespace QuanLiCuaHangDienThoai
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int idsp= Convert.ToInt32(dssp.Rows[stt]["idSP"].ToString());
+            double giaban=0;
+            int hanbaohanh=0;
 
-            bool kq = bll.SuaSanPham(idsp, txtTen.Text, txtMota.Text,
-                Convert.ToDouble(txtGiaBan.Text),
-                Convert.ToInt32(txtBH.Text), ref error);
+            if(txtGiaBan.Text.Trim() != "")
+            {
+                giaban = Convert.ToDouble(txtGiaBan.Text.Trim());
+            }
+            if(txtBH.Text.Trim()!="")
+            {
+                hanbaohanh = Convert.ToInt32(txtBH.Text.Trim());
+            }
+            
+            bool kq = bll.SuaSanPham(idsp, txtTen.Text, txtMota.Text,giaban,hanbaohanh, ref error);
             if (kq)
             {
                 MessageBox.Show("Đã sửa thành công!!!", "Thông báo", MessageBoxButtons.OK,
@@ -56,5 +65,7 @@ namespace QuanLiCuaHangDienThoai
                 this.Close();
             }
         }
+
+    
     }
 }

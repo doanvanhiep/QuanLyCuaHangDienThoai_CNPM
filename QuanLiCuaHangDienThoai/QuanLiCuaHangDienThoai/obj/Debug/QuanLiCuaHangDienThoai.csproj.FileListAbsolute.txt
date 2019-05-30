@@ -3,7 +3,6 @@ E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\QuanLiC
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csprojAssemblyReference.cache
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmDangNhap.resources
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmChiTietSP.resources
-E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmCongTy.resources
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmDoiMatKhau.resources
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmMaMoi.resources
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmNhapHang.resources
@@ -22,3 +21,6 @@ E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\Busines
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\DataAccessLayer.dll
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\BusinessLogicLayer.pdb
 E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\bin\Debug\DataAccessLayer.pdb
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmLSXuatHang.resources
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmLSXuatHangChiTiet.resources
+E:\CNPM\DACuoiKi\QuanLiCuaHangDienThoai\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.frmBaoHanh.resources

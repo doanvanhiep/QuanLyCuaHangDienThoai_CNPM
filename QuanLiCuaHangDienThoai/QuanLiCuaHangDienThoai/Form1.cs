@@ -64,32 +64,45 @@ namespace QuanLiCuaHangDienThoai
                             //Nhập thông tin
                             idnv = Convert.ToInt32(ds.Tables[0].Rows[0]["idNV"].ToString());
                             quyen = Convert.ToInt32(ds.Tables[0].Rows[0]["quyen"].ToString());
-                            if (ckbMatKhau.Checked == true)
+                            if(quyen>0)
                             {
-                                Properties.Settings.Default.user = user;
-                                Properties.Settings.Default.pass = password;
-                                Properties.Settings.Default.check = true;
-                                Properties.Settings.Default.Save();
+                                if (ckbMatKhau.Checked == true)
+                                {
+                                    Properties.Settings.Default.user = user;
+                                    Properties.Settings.Default.pass = password;
+                                    Properties.Settings.Default.check = true;
+                                    Properties.Settings.Default.Save();
+                                }
+                                else
+                                {
+                                    Properties.Settings.Default.user = "";
+                                    Properties.Settings.Default.pass = "";
+                                    Properties.Settings.Default.check = false;
+                                    Properties.Settings.Default.Save();
+                                }
+                                frmTrangChu f = new frmTrangChu(this);
+                                this.Hide();
+                                //Truyền dữ liệu qua form khác
+                                f.name = user;
+                                f.idnv = idnv;
+                                f.quyen = quyen;
+                                f.mk = password;
+
+                                f.ShowDialog();
+                                txtTenDangNhap.ResetText();
+                                txtMatKhau.ResetText();
+                                ckbMatKhau.Checked = false;
+                                txtTenDangNhap.Focus();
                             }
                             else
                             {
-                                Properties.Settings.Default.user = "";
-                                Properties.Settings.Default.pass = "";
-                                Properties.Settings.Default.check = false;
-                                Properties.Settings.Default.Save();
-                            }
-                            frmTrangChu f = new frmTrangChu(this);
-                            this.Hide();
-                            //Truyền dữ liệu qua form khác
-                            f.name = user;
-                            f.idnv = idnv;
-                            f.quyen = quyen;
+                                MessageBox.Show("Bạn đã hết quyền đăng nhập !!!", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                txtTenDangNhap.ResetText();
+                                txtMatKhau.ResetText();
+                                txtTenDangNhap.Focus();
 
-                            f.ShowDialog();
-                            txtTenDangNhap.ResetText();
-                            txtMatKhau.ResetText();
-                            ckbMatKhau.Checked = false;
-                            txtTenDangNhap.Focus();
+                            }
                         }
                         else
                         {
@@ -100,6 +113,7 @@ namespace QuanLiCuaHangDienThoai
                             txtTenDangNhap.Focus();
 
                         }
+
                     }
                 }
 

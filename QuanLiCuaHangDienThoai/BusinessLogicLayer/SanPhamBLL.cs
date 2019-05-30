@@ -44,5 +44,34 @@ namespace BusinessLogicLayer
             return dal.MyExecuteNonQuery("spSuaSLSP",CommandType.StoredProcedure,ref error,
                 new SqlParameter("@IDSP",IDSP),new SqlParameter("@SoLuong",SoLuong));
         }
+
+        //Tìm sản phẩm theo ID
+
+        public DataSet TimSPTheoID(ref string error,int IDSP)
+        {
+            return dal.ExecuteQueryDataSet("spTimSPtheoID", CommandType.StoredProcedure,ref error, new SqlParameter("@IDSP", IDSP));
+        }
+
+        //Thêm bảo hành
+
+        public bool ThemBaoHanh(ref string error, int IDSP, int IDKH, DateTime HanBaoHanh)
+        {
+            return dal.MyExecuteNonQuery("spThemBaoHanh", CommandType.StoredProcedure, ref error,
+                new SqlParameter("@IDSP", IDSP), new SqlParameter("@IDKH", IDKH)
+                , new SqlParameter("@HanBaoHanh", HanBaoHanh));
+        }
+
+        //Tìm sản phẩm theo tên
+
+        public DataSet DSSanPhamTheoTen(ref string error, string TenSP)
+        {
+            return dal.ExecuteQueryDataSet("spTimKiemSPtheoTen", CommandType.StoredProcedure, ref error,new SqlParameter("@TenSP",TenSP));
+        }
+        //Tìm sản phẩm hạn bảo hành
+
+        public DataSet DSSanPhamBH(ref string error)
+        {
+            return dal.ExecuteQueryDataSet("spDSSPBH", CommandType.StoredProcedure, ref error);
+        }
     }
 }
