@@ -30,7 +30,7 @@ namespace BusinessLogicLayer
                 new SqlParameter("@HanBaoHanh", HanBaoHanh));
         }
 
-        public bool SuaSanPham(int IDSP,string TenSP, string MoTa, double GiaBan, int HanBaoHanh, ref string error)
+        public bool SuaSanPham (int IDSP,string TenSP, string MoTa, double GiaBan, int HanBaoHanh, ref string error)
         {
             return dal.MyExecuteNonQuery("spSuaSP", CommandType.StoredProcedure, ref error,
                 new SqlParameter("@IDSP", IDSP),new SqlParameter("@TenSP", TenSP), 

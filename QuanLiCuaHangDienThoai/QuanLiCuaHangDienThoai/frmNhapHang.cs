@@ -70,7 +70,7 @@ namespace QuanLiCuaHangDienThoai
             {
                 int soluongdong = dgvSP.Rows.Count - 1;
 
-                if(soluongdong>=0)
+                if(soluongdong>0)
                 {
                     for (int i = 0; i < soluongdong; i++)
                     {
@@ -83,9 +83,15 @@ namespace QuanLiCuaHangDienThoai
                     }
                     MessageBox.Show("Bạn đã thêm thành công", "Thông báo", MessageBoxButtons.OK,
                               MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    this.Close();
+                    f.Show();
                 }
-                this.Close();
-                f.Show();
+                else
+                {
+                    MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK,
+                              MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+              
             }
             catch(Exception)
             {
@@ -130,10 +136,17 @@ namespace QuanLiCuaHangDienThoai
             {
                 MessageBox.Show("Vui lòng nhập đúng dữ liệu", "Lỗi", MessageBoxButtons.OK,
                              MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtGiaNhap.ResetText();
+                txtSoLuong.ResetText();
                 load();
             }
 
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

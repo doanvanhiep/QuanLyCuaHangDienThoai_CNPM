@@ -52,19 +52,31 @@ namespace QuanLiCuaHangDienThoai
                 }
                 else
                 {
-                    bool kt = bll.DoiMK(ref error, idnv, mkcu, mkmoi);
-                    if(kt)
+                   if(mkmoi.Length<8)
                     {
-                        MessageBox.Show("Đổi thành công !!", "Thông báo", MessageBoxButtons.OK,
-                         MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        
-                        this.Close();
-                        f1.dangxuat();
+                        if (matkhau != mkcu)
+                        {
+                            MessageBox.Show("Vui lòng nhập mật khẩu có từ 8 kí tự trở lên !!", "Thông báo", MessageBoxButtons.OK,
+                           MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                           
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Thất bại !!", "Lỗi", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        bool kt = bll.DoiMK(ref error, idnv, mkcu, mkmoi);
+                        if (kt)
+                        {
+                            MessageBox.Show("Đổi thành công !!", "Thông báo", MessageBoxButtons.OK,
+                             MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                            this.Close();
+                            f1.dangxuat();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thất bại !!", "Lỗi", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        }
                     }
                 }
             }

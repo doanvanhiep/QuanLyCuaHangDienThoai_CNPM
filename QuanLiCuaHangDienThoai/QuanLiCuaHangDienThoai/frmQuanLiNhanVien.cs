@@ -78,6 +78,7 @@ namespace QuanLiCuaHangDienThoai
             txtSDT.ResetText();
             txtTen.Focus();
             txtTen.Enabled = true;
+            dgvDanhsachNV.Enabled = false;
 
             mo();
         }
@@ -92,7 +93,7 @@ namespace QuanLiCuaHangDienThoai
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool kt = false;
-            
+            bool ktcmnd = false;
             
             string tennv = txtTen.Text.Trim();
             string diachi = txtDiaChi.Text.Trim();
@@ -105,65 +106,76 @@ namespace QuanLiCuaHangDienThoai
                 MessageBox.Show("Vui lòng nhập tên", "Thông báo", MessageBoxButtons.OK,
                             MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 txtTen.Focus();
+
+                
             }else
             {
+                int cmnd=0;
                 try
                 {
-                    int cmnd;
-                    if (cmndstr=="")
-                    {
-                        cmnd = 0;
-                    }else
-                    {
-                        cmnd = Convert.ToInt32(cmndstr);
-                    }
-
-                    if (them)
-                    {
-                        kt = nhanvienbll.ThemNhanVien(ref error, tennv, diachi, email, cmnd, sdt);
-                        if (kt)
-                        {
-                            MessageBox.Show("Bạn đã thêm thành công", "Thông báo", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        }
-
-                    }
-                    else
-                    {
-                        int idnv = Convert.ToInt32(txtID.Text);
-                        kt = nhanvienbll.SuaNhanVien(ref error, idnv, tennv, diachi, email, cmnd, sdt);
-                        if (kt)
-                        {
-                            MessageBox.Show("Bạn đã sửa thành công", "Thông báo", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sửa thất bại", "Lỗi", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            
-                        }
-                       
-                    }
-                    dong();
-                    loaddata();
-                }
-                catch (Exception)
+                    cmnd = Convert.ToInt32(cmndstr);
+                    ktcmnd = true;
+                }catch
                 {
-                    this.Close();
-                    f.Show();
-                    MessageBox.Show("LỖI", "Lỗi", MessageBoxButtons.OK,
-                              MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    ktcmnd = false;
+                }
+               if(ktcmnd)
+                {
+                    try
+                    {
+                        if (them)
+                        {
+                            kt = nhanvienbll.ThemNhanVien(ref error, tennv, diachi, email, cmnd, sdt);
+                            if (kt)
+                            {
+                                MessageBox.Show("Bạn đã thêm thành công", "Thông báo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            }
+
+                        }
+                        else
+                        {
+                            int idnv = Convert.ToInt32(txtID.Text);
+                            kt = nhanvienbll.SuaNhanVien(ref error, idnv, tennv, diachi, email, cmnd, sdt);
+                            if (kt)
+                            {
+                                MessageBox.Show("Bạn đã sửa thành công", "Thông báo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa thất bại", "Lỗi", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            }
+
+                        }
+                        dong();
+                        loaddata();
+                    }
+                    catch (Exception)
+                    {
+                        this.Close();
+                        f.Show();
+                        MessageBox.Show("LỖI", "Lỗi", MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }else
+                {
+                    txtCMND.ResetText();
+                    txtCMND.Focus();
+                    MessageBox.Show("Vui lòng nhập lại số chứng minh nhân dân cho đúng", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                
             }
-         
-        
+
+            dgvDanhsachNV.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -202,6 +214,7 @@ namespace QuanLiCuaHangDienThoai
             pnThongtin.Enabled = false;
             databiding();
             dong();
+            dgvDanhsachNV.Enabled = true;
         }
 
         void dong()
@@ -225,6 +238,8 @@ namespace QuanLiCuaHangDienThoai
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnThoat.Enabled = false;
+
+           
         }
     }
 

@@ -48,32 +48,61 @@ namespace QuanLiCuaHangDienThoai
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string tenSP = txtTenSP.Text;
-            string mota = txtMoTa.Text;
-            double gia = 0;
-            if (txtGiaSP.Text.Trim()!="")
+           try
             {
-                Convert.ToDouble(txtGiaSP.Text);
-            }
-            string hinh = file;
-            int hanbaohanh =0;
-            if (txtTGBH.Text.Trim()!="")
-            {
-                hanbaohanh = Convert.ToInt32(txtTGBH.Text);
-            }
+                bool kt = false;
+                string tenSP = txtTenSP.Text;
+                string mota = txtMoTa.Text;
+                double gia = 0;
+                string hinh = file;
+                int hanbaohanh = 0;
 
-            bool kq= bll.ThemSanPham(tenSP, mota, gia, hinh, hanbaohanh, ref error);
-            if(kq)
+                if(tenSP.Trim()=="")
+                {
+                    MessageBox.Show("Nhập tên sản phẩm!!!", "Thông báo", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    txtTenSP.Focus();
+                }
+                else
+                {
+                    try
+                    {
+                        gia = Convert.ToDouble(txtGiaSP.Text);
+
+                        hanbaohanh = Convert.ToInt32(txtTGBH.Text);
+
+                        kt = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Nhập lại dữ liệu cho đúng!!!", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        kt = false;
+                    }
+                    if (kt)
+                    {
+
+                        bool kq = bll.ThemSanPham(tenSP, mota, gia, hinh, hanbaohanh, ref error);
+                        if (kq)
+                        {
+                            MessageBox.Show("Đã thêm thành công!!!", "Thông báo", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            this.Close();
+                        }
+
+                        else
+                        {
+                            this.Close();
+
+                            MessageBox.Show("Thêm thất bại !!!", "Lỗi", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                }
+             
+            }catch
             {
-                MessageBox.Show("Đã thêm thành công!!!", "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 this.Close();
-            }
-            
-            else
-            {
-                this.Close();
-                
                 MessageBox.Show("Thêm thất bại !!!", "Lỗi", MessageBoxButtons.OK,
                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
